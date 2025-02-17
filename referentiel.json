@@ -4,19 +4,19 @@
       "id": "session-01",
       "titre": "Introduction à la programmation",
       "description": "Une session qui couvre les bases de la programmation informatique.",
-      "lien": "session-01.html"
+      "lien": "https://github.com/Algarath/adam/blob/main/session-01.html"
     },
     {
       "id": "session-02",
       "titre": "Les principes de base de données",
       "description": "Session qui couvre les concepts fondamentaux des bases de données.",
-      "lien": "session-02.html"
+      "lien": "https://github.com/Algarath/adam/blob/main/session-02.html"
     },
     {
       "id": "session-03",
       "titre": "Bases de données",
       "description": "Session sur les bases des bases de données.",
-      "lien": "session-03.html"
+      "lien": "https://github.com/Algarath/adam/blob/main/session-03.html"
     }
   ]
 }
