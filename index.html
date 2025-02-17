@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Mini Site</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Historique des Sessions</h1>
+        <ul id="sessions-list">
+            <!-- La liste des sessions sera générée ici -->
+        </ul>
+    </div>
+
+    <script>
+        fetch('referentiel.json')
+            .then(response => response.json())
+            .then(data => {
+                const sessionsList = document.getElementById('sessions-list');
+                data.sessions.forEach(session => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<a href="${session.lien}">${session.titre}</a>: ${session.description}`;
+                    sessionsList.appendChild(li);
+                });
+            })
+            .catch(error => console.error('Erreur de chargement du fichier JSON:', error));
+    </script>
+</body>
+</html>

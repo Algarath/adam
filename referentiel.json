@@ -1,0 +1,22 @@
+{
+    "sessions": [
+        {
+            "id": "session-01",
+            "titre": "Session 1 - Mémoire Initiale",
+            "description": "Première session avec les données de base sur la mémoire et les objectifs initiaux.",
+            "lien": "session-01.html"
+        },
+        {
+            "id": "session-02",
+            "titre": "Session 2 - Modifications",
+            "description": "Deuxième session avec les ajustements sur la mémoire et l’analyse des résultats.",
+            "lien": "session-02.html"
+        },
+        {
+            "id": "session-03",
+            "titre": "Session 3 - Tests et évolutions",
+            "description": "Troisième session où on effectue des tests pour vérifier les améliorations et modifications.",
+            "lien": "session-03.html"
+        }
+    ]
+}
