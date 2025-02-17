@@ -2,21 +2,21 @@
   "sessions": [
     {
       "id": "session-01",
-      "url": "https://algarath.github.io/adam/session-01.html",
-      "title": "Session 1: Introduction à la programmation",
-      "description": "Cette session couvre les concepts de base de la programmation, avec des exemples pratiques en Python."
+      "titre": "Introduction à la programmation",
+      "description": "Une session qui couvre les bases de la programmation informatique.",
+      "lien": "https://algarath.github.io/adam/session-01.html"
     },
     {
       "id": "session-02",
-      "url": "https://algarath.github.io/adam/session-02.html",
-      "title": "Session 2: Introduction aux bases de données",
-      "description": "Cette session couvre les concepts de base des bases de données relationnelles et non relationnelles, avec des démonstrations pratiques pour gérer une base de données simple et exécuter des requêtes SQL."
+      "titre": "Les principes de base de données",
+      "description": "Session qui couvre les concepts fondamentaux des bases de données.",
+      "lien": "https://algarath.github.io/adam/session-02.html"
     },
     {
       "id": "session-03",
-      "url": "https://algarath.github.io/adam/session-03.html",
-      "title": "Session 3: Bases de données avancées",
-      "description": "Cette session explore des concepts avancés des bases de données, y compris la gestion des transactions, l'optimisation des requêtes et la sécurité des bases de données."
+      "titre": "Bases de données",
+      "description": "Session sur les bases des bases de données.",
+      "lien": "https://algarath.github.io/adam/session-03.html"
     }
   ]
 }
