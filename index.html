@@ -3,57 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Mini Site</title>
+    <title>Historique des Sessions</title>
+    <script>
+        async function chargerSessions() {
+            const response = await fetch('referentiel.json');
+            const data = await response.json();
+            afficherSessions(data.sessions);
+        }
+
+        function afficherSessions(sessions) {
+            const container = document.getElementById('session-list');
+            container.innerHTML = '';
+            sessions.forEach(session => {
+                const sessionElement = document.createElement('div');
+                sessionElement.classList.add('session');
+                sessionElement.innerHTML = `
+                    <h3>${session.title}</h3>
+                    <p>${session.description}</p>
+                    <a href="${session.url}" target="_blank">Ouvrir</a>
+                `;
+                container.appendChild(sessionElement);
+            });
+        }
+
+        function rechercherSessions() {
+            const searchTerm = document.getElementById('search').value.toLowerCase();
+            fetch('referentiel.json')
+                .then(response => response.json())
+                .then(data => {
+                    const filtered = data.sessions.filter(session =>
+                        session.title.toLowerCase().includes(searchTerm) ||
+                        session.description.toLowerCase().includes(searchTerm)
+                    );
+                    afficherSessions(filtered);
+                });
+        }
+
+        window.onload = chargerSessions;
+    </script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            padding: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-        }
-        h1 {
-            text-align: center;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        li {
-            margin: 10px 0;
-        }
-        a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-        }
+        body { font-family: Arial, sans-serif; }
+        .session { border: 1px solid #ccc; padding: 10px; margin: 10px; }
+        input { margin: 10px; padding: 5px; }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Historique des Sessions</h1>
-        <ul id="sessions-list">
-            <!-- La liste des sessions sera générée ici -->
-        </ul>
-    </div>
-
-    <script>
-        fetch('referentiel.json')
-            .then(response => response.json())
-            .then(data => {
-                const sessionsList = document.getElementById('sessions-list');
-                data.sessions.forEach(session => {
-                    const li = document.createElement('li');
-                    li.innerHTML = `<a href="${session.lien}">${session.titre}</a>: ${session.description}`;
-                    sessionsList.appendChild(li);
-                });
-            })
-            .catch(error => console.error('Erreur de chargement du fichier JSON:', error));
-    </script>
+    <h1>Historique des Sessions</h1>
+    <input type="text" id="search" onkeyup="rechercherSessions()" placeholder="Rechercher une session...">
+    <div id="session-list"></div>
 </body>
 </html>

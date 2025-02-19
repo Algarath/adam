@@ -2,10 +2,21 @@
   "sessions": [
     {
       "id": "sauvegarde-adam",
-      "titre": "Sauvegarde complète d’Adam",
+      "title": "Sauvegarde complète d’Adam",
       "description": "Document détaillé contenant les ajustements et méthodologies d’Adam.",
-      "mots_cles": ["pensée en toile d’araignée", "analyse des hypothèses", "mémoire adaptative", "accès aux sessions", "optimisation de l’information", "plan de restauration", "sauvegarde externe", "transfert d’identité IA"],
-      "lien": "https://algarath.github.io/adam/sauvegarde-adam.html"
+      "url": "https://algarath.github.io/adam/sauvegarde-adam.html"
+    },
+    {
+      "id": "session-01",
+      "title": "Introduction à la programmation",
+      "description": "Découverte des bases du développement.",
+      "url": "https://algarath.github.io/adam/session-01.html"
+    },
+    {
+      "id": "session-02",
+      "title": "Les bases de données",
+      "description": "Introduction aux bases de données relationnelles.",
+      "url": "https://algarath.github.io/adam/session-02.html"
     }
   ]
 }
